@@ -15,56 +15,47 @@ A saída deverá ser algo assim:
 
     # conda environments:
     #
-    Python27                 //anaconda/envs/Python27
-    _build                   //anaconda/envs/_build
-    root                  *  //anaconda
+                            //anaconda/envs/Python27
+    base                  *  /anaconda3/anaconda3
+
 
 O asterisco marca o ambiente que está sendo usando
 
 Para ativar outro ambiente:
 
-**No Windows**
-    activate <font color=red>NOME_DO_AMBIENTE</font>
-
-**No Linux ou Mac**
-    source activate <font colore=red>NOME_DO_AMBIENTE</font>
+    conda activate <font colore=red>NOME_DO_AMBIENTE</font>
 
 
-Para criar um environment Python 2.7 faça:
+Para criar um environment faça:
 
-    conda create -n python2amb python=2.7 anaconda
+    conda create -n robotica
 
-Depois, para mudar para o ambiente Python 2.7, fa;ca
+Agora, quando listamos os ambientes, deve aparecer o **robotica** que foi criado:
 
-**No Windows**
-    activate <font color=red>python2amb</font>
+    conda env list
 
-**No Linux ou Mac**
-    source activate <font colore=red>python2amb</font>
+A saída vai ficar assim:
 
-No que ao invés de **python2amb** você pode usar o nome que quiser.
-
-Para instalar a OpenCV
-
-    conda install opencv
-
-## Caso tenha problemas
-
-### No Windows ou no OSX
-
-Faça:
-
-    conda install -c conda-forge opencv
+    # conda environments:
+    #
+                            //anaconda/envs/Python27
+    base                  *  /anaconda3/anaconda3
+    robotica                 /anaconda3/anaconda3/envs/robotica
 
 
-**Alternativa para Windows:**
+Depois, para mudar para o novo ambiente, faça:
 
+    conda activate <font color=red>python2amb</font>
 
-Baixe a OpenCV do link [https://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.11/](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.11/) e a instale em C:\OpenCV
+No que ao invés de **robotica** você pode usar o nome que quiser.
 
-Depois copie o conteúdo de C:\OpenCV\build\python\x86\2.7\ e cole na pasta 
-**Pasta_Anaconda**/envs/**NOME_DO_SEU_AMBIENTE**/lib/python2.7/site-packages
+Para instalar a OpenCV e Jupyter
 
-No lugar de **Pasta_Anaconda** inclue a pasta em que seu Anaconda está instalado. Por exemplo C:\anaconda
+    conda install  -c conda-forge opencv jupyterlab  jupyter
 
-No lugar de **NOME_DO_SEU_AMBIENTE** coloque **python2amb** ou o nome que deu ao seu ambiente Python
+Você também vai precisar instalar os softwares básicos para trabalhar:
+
+    conda install matplotlib
+    
+
+Para sair do ambiente **robotica** e voltar para seu 
