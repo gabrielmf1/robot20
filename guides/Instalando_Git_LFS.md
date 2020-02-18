@@ -8,3 +8,8 @@ para abrir o terminal, use Crtl+ T
     git lfs install
 
 
+# Instalando O GIT LFS no Windows
+
+Copie e cole os comandos a seguir no prompt
+
+    conda install -c conda-force git-lfs
